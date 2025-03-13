@@ -38,5 +38,33 @@ namespace OnlineTicariOtomasyonMvc.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult GetDepartman(int id)
+        {
+            var dpt = c.Departmans.Find(id);
+            return View("GetDepartman",dpt);
+        }
+        public ActionResult PutDepartman(Departman p)
+        {
+            var dept = c.Departmans.Find(p.DepartmanID);
+            dept.DepartmanAd= p.DepartmanAd;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DetailsDepartman(int id)
+        {
+            var value = c.Personels.Where(x => x.Departmanid == id).ToList();
+            var dpt = c.Departmans.Where(x=>x.DepartmanID == id).Select(y=>y.DepartmanAd).FirstOrDefault();
+            ViewBag.d = dpt;
+            return View(value);
+        }
+        public ActionResult DepartmanPersonelSale(int id)
+        {
+            var value = c.SatisHarekets.Where(x => x.Personelid == id).ToList();
+            var per = c.Personels.Where(x=>x.PersonelID == id).Select(y => y.PersonelAd + " " + y.PersonelSoyad).FirstOrDefault();
+            ViewBag.dpers = per;
+            return View(value);
+        }
     }
 }
