@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CariController.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
@@ -293,6 +294,8 @@
     <Content Include="Views\Departman\GetDepartman.cshtml" />
     <Content Include="Views\Departman\DetailsDepartman.cshtml" />
     <Content Include="Views\Departman\DepartmanPersonelSale.cshtml" />
+    <Content Include="Views\Cari\Index.cshtml" />
+    <Content Include="Views\Cari\CreateCari.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
